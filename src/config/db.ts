@@ -7,10 +7,16 @@ import {
 import { Book } from "../modules/books/entities/Book";
 
 export async function pgConnection(): Promise<Connection> {
-  if (getConnectionManager().has("default")) {
-    await getConnection().close();
+  try {
+    if (getConnectionManager().has("default")) {
+      await getConnection().close();
+    }
+  } catch (error) {
+    console.log("error");
   }
+
   return await createConnection({
+    name: "default",
     type: "postgres",
     host: process.env.DATABASE_HOST,
     username: process.env.DATABASE_USERNAME,
