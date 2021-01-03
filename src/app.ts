@@ -1,3 +1,4 @@
+import 'reflect-metadata'
 import express, { Express, json } from "express";
 import BooksModule from "./modules/books/init";
 import dotenv, { DotenvConfigOutput } from "dotenv";
