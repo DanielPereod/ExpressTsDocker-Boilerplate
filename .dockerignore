@@ -6,3 +6,4 @@ dist
 Dockerfile
 README.md
 docker-compose.yml
+.devcontainer
